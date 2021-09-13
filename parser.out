@@ -1,0 +1,1000 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> start
+Rule 1     start -> mname
+Rule 2     start -> directors
+Rule 3     start -> writer
+Rule 4     start -> producers
+Rule 5     start -> language
+Rule 6     start -> cast
+Rule 7     start -> story
+Rule 8     start -> collection
+Rule 9     start -> runtime
+Rule 10    start -> similar_movie
+Rule 11    start -> watch
+Rule 12    watch -> SWATCH platforms EWATCH
+Rule 13    platform -> LWATCH string RWATCH
+Rule 14    platforms -> platform
+Rule 15    platforms -> platform platforms
+Rule 16    similar_movie -> SLIKE u_may_like ELIKE
+Rule 17    single_like -> LLIKE string MLIKE string RLIKE
+Rule 18    u_may_like -> single_like SEP u_may_like
+Rule 19    u_may_like -> single_like
+Rule 20    mname -> LNAME movie_name RNAME
+Rule 21    movie_name -> string SEP string
+Rule 22    movie_name -> string
+Rule 23    movie_name -> string STRING
+Rule 24    directors -> LDIRECTORS celebrity RTAG
+Rule 25    writer -> LWRITERS celebrity RTAG
+Rule 26    producers -> LPRODUCERS celebrity RTAG
+Rule 27    celebrity -> ANCHOR string RA
+Rule 28    celebrity -> ANCHOR string RA SEP celebrity
+Rule 29    language -> LLANGUAGE string RTAG
+Rule 30    cast -> SCAST string LCAST string MCAST role RCAST
+Rule 31    role -> string
+Rule 32    role -> role SEP string
+Rule 33    role -> role BR string
+Rule 34    story -> LSTORY temp_story RTAG
+Rule 35    temp_story -> string
+Rule 36    temp_story -> STRING stories
+Rule 37    temp_story -> temp_story stories
+Rule 38    stories -> STRING string
+Rule 39    stories -> SEP string
+Rule 40    collection -> LCOLLECTION string RTAG
+Rule 41    runtime -> LRUNTIME time RRUNTIME
+Rule 42    time -> STRING string
+Rule 43    time -> STRING
+Rule 44    string -> STRING
+Rule 45    string -> STRING wspaces string
+Rule 46    wspaces -> WSPACE
+Rule 47    wspaces -> WSPACE wspaces
+
+Terminals, with rules where they appear
+
+ANCHOR               : 27 28
+BR                   : 33
+ELIKE                : 16
+EWATCH               : 12
+LCAST                : 30
+LCOLLECTION          : 40
+LDIRECTORS           : 24
+LLANGUAGE            : 29
+LLIKE                : 17
+LNAME                : 20
+LPRODUCERS           : 26
+LRUNTIME             : 41
+LSTORY               : 34
+LWATCH               : 13
+LWRITERS             : 25
+MCAST                : 30
+MLIKE                : 17
+RA                   : 27 28
+RCAST                : 30
+RLIKE                : 17
+RNAME                : 20
+RRUNTIME             : 41
+RTAG                 : 24 25 26 29 34 40
+RWATCH               : 13
+SCAST                : 30
+SEP                  : 18 21 28 32 39
+SLIKE                : 16
+STRING               : 23 36 38 42 43 44 45
+SWATCH               : 12
+WSPACE               : 46 47
+error                : 
+
+Nonterminals, with rules where they appear
+
+cast                 : 6
+celebrity            : 24 25 26 28
+collection           : 8
+directors            : 2
+language             : 5
+mname                : 1
+movie_name           : 20
+platform             : 14 15
+platforms            : 12 15
+producers            : 4
+role                 : 30 32 33
+runtime              : 9
+similar_movie        : 10
+single_like          : 18 19
+start                : 0
+stories              : 36 37
+story                : 7
+string               : 13 17 17 21 21 22 23 27 28 29 30 30 31 32 33 35 38 39 40 42 45
+temp_story           : 34 37
+time                 : 41
+u_may_like           : 16 18
+watch                : 11
+writer               : 3
+wspaces              : 45 47
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . start
+    (1) start -> . mname
+    (2) start -> . directors
+    (3) start -> . writer
+    (4) start -> . producers
+    (5) start -> . language
+    (6) start -> . cast
+    (7) start -> . story
+    (8) start -> . collection
+    (9) start -> . runtime
+    (10) start -> . similar_movie
+    (11) start -> . watch
+    (20) mname -> . LNAME movie_name RNAME
+    (24) directors -> . LDIRECTORS celebrity RTAG
+    (25) writer -> . LWRITERS celebrity RTAG
+    (26) producers -> . LPRODUCERS celebrity RTAG
+    (29) language -> . LLANGUAGE string RTAG
+    (30) cast -> . SCAST string LCAST string MCAST role RCAST
+    (34) story -> . LSTORY temp_story RTAG
+    (40) collection -> . LCOLLECTION string RTAG
+    (41) runtime -> . LRUNTIME time RRUNTIME
+    (16) similar_movie -> . SLIKE u_may_like ELIKE
+    (12) watch -> . SWATCH platforms EWATCH
+
+    LNAME           shift and go to state 13
+    LDIRECTORS      shift and go to state 14
+    LWRITERS        shift and go to state 15
+    LPRODUCERS      shift and go to state 16
+    LLANGUAGE       shift and go to state 17
+    SCAST           shift and go to state 18
+    LSTORY          shift and go to state 19
+    LCOLLECTION     shift and go to state 20
+    LRUNTIME        shift and go to state 21
+    SLIKE           shift and go to state 22
+    SWATCH          shift and go to state 23
+
+    start                          shift and go to state 1
+    mname                          shift and go to state 2
+    directors                      shift and go to state 3
+    writer                         shift and go to state 4
+    producers                      shift and go to state 5
+    language                       shift and go to state 6
+    cast                           shift and go to state 7
+    story                          shift and go to state 8
+    collection                     shift and go to state 9
+    runtime                        shift and go to state 10
+    similar_movie                  shift and go to state 11
+    watch                          shift and go to state 12
+
+state 1
+
+    (0) S' -> start .
+
+
+
+state 2
+
+    (1) start -> mname .
+
+    $end            reduce using rule 1 (start -> mname .)
+
+
+state 3
+
+    (2) start -> directors .
+
+    $end            reduce using rule 2 (start -> directors .)
+
+
+state 4
+
+    (3) start -> writer .
+
+    $end            reduce using rule 3 (start -> writer .)
+
+
+state 5
+
+    (4) start -> producers .
+
+    $end            reduce using rule 4 (start -> producers .)
+
+
+state 6
+
+    (5) start -> language .
+
+    $end            reduce using rule 5 (start -> language .)
+
+
+state 7
+
+    (6) start -> cast .
+
+    $end            reduce using rule 6 (start -> cast .)
+
+
+state 8
+
+    (7) start -> story .
+
+    $end            reduce using rule 7 (start -> story .)
+
+
+state 9
+
+    (8) start -> collection .
+
+    $end            reduce using rule 8 (start -> collection .)
+
+
+state 10
+
+    (9) start -> runtime .
+
+    $end            reduce using rule 9 (start -> runtime .)
+
+
+state 11
+
+    (10) start -> similar_movie .
+
+    $end            reduce using rule 10 (start -> similar_movie .)
+
+
+state 12
+
+    (11) start -> watch .
+
+    $end            reduce using rule 11 (start -> watch .)
+
+
+state 13
+
+    (20) mname -> LNAME . movie_name RNAME
+    (21) movie_name -> . string SEP string
+    (22) movie_name -> . string
+    (23) movie_name -> . string STRING
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    movie_name                     shift and go to state 24
+    string                         shift and go to state 25
+
+state 14
+
+    (24) directors -> LDIRECTORS . celebrity RTAG
+    (27) celebrity -> . ANCHOR string RA
+    (28) celebrity -> . ANCHOR string RA SEP celebrity
+
+    ANCHOR          shift and go to state 28
+
+    celebrity                      shift and go to state 27
+
+state 15
+
+    (25) writer -> LWRITERS . celebrity RTAG
+    (27) celebrity -> . ANCHOR string RA
+    (28) celebrity -> . ANCHOR string RA SEP celebrity
+
+    ANCHOR          shift and go to state 28
+
+    celebrity                      shift and go to state 29
+
+state 16
+
+    (26) producers -> LPRODUCERS . celebrity RTAG
+    (27) celebrity -> . ANCHOR string RA
+    (28) celebrity -> . ANCHOR string RA SEP celebrity
+
+    ANCHOR          shift and go to state 28
+
+    celebrity                      shift and go to state 30
+
+state 17
+
+    (29) language -> LLANGUAGE . string RTAG
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 31
+
+state 18
+
+    (30) cast -> SCAST . string LCAST string MCAST role RCAST
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 32
+
+state 19
+
+    (34) story -> LSTORY . temp_story RTAG
+    (35) temp_story -> . string
+    (36) temp_story -> . STRING stories
+    (37) temp_story -> . temp_story stories
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 35
+
+    temp_story                     shift and go to state 33
+    string                         shift and go to state 34
+
+state 20
+
+    (40) collection -> LCOLLECTION . string RTAG
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 36
+
+state 21
+
+    (41) runtime -> LRUNTIME . time RRUNTIME
+    (42) time -> . STRING string
+    (43) time -> . STRING
+
+    STRING          shift and go to state 38
+
+    time                           shift and go to state 37
+
+state 22
+
+    (16) similar_movie -> SLIKE . u_may_like ELIKE
+    (18) u_may_like -> . single_like SEP u_may_like
+    (19) u_may_like -> . single_like
+    (17) single_like -> . LLIKE string MLIKE string RLIKE
+
+    LLIKE           shift and go to state 41
+
+    u_may_like                     shift and go to state 39
+    single_like                    shift and go to state 40
+
+state 23
+
+    (12) watch -> SWATCH . platforms EWATCH
+    (14) platforms -> . platform
+    (15) platforms -> . platform platforms
+    (13) platform -> . LWATCH string RWATCH
+
+    LWATCH          shift and go to state 44
+
+    platforms                      shift and go to state 42
+    platform                       shift and go to state 43
+
+state 24
+
+    (20) mname -> LNAME movie_name . RNAME
+
+    RNAME           shift and go to state 45
+
+
+state 25
+
+    (21) movie_name -> string . SEP string
+    (22) movie_name -> string .
+    (23) movie_name -> string . STRING
+
+    SEP             shift and go to state 46
+    RNAME           reduce using rule 22 (movie_name -> string .)
+    STRING          shift and go to state 47
+
+
+state 26
+
+    (44) string -> STRING .
+    (45) string -> STRING . wspaces string
+    (46) wspaces -> . WSPACE
+    (47) wspaces -> . WSPACE wspaces
+
+    SEP             reduce using rule 44 (string -> STRING .)
+    STRING          reduce using rule 44 (string -> STRING .)
+    RNAME           reduce using rule 44 (string -> STRING .)
+    RTAG            reduce using rule 44 (string -> STRING .)
+    LCAST           reduce using rule 44 (string -> STRING .)
+    RA              reduce using rule 44 (string -> STRING .)
+    RRUNTIME        reduce using rule 44 (string -> STRING .)
+    MLIKE           reduce using rule 44 (string -> STRING .)
+    RWATCH          reduce using rule 44 (string -> STRING .)
+    MCAST           reduce using rule 44 (string -> STRING .)
+    RLIKE           reduce using rule 44 (string -> STRING .)
+    RCAST           reduce using rule 44 (string -> STRING .)
+    BR              reduce using rule 44 (string -> STRING .)
+    WSPACE          shift and go to state 49
+
+    wspaces                        shift and go to state 48
+
+state 27
+
+    (24) directors -> LDIRECTORS celebrity . RTAG
+
+    RTAG            shift and go to state 50
+
+
+state 28
+
+    (27) celebrity -> ANCHOR . string RA
+    (28) celebrity -> ANCHOR . string RA SEP celebrity
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 51
+
+state 29
+
+    (25) writer -> LWRITERS celebrity . RTAG
+
+    RTAG            shift and go to state 52
+
+
+state 30
+
+    (26) producers -> LPRODUCERS celebrity . RTAG
+
+    RTAG            shift and go to state 53
+
+
+state 31
+
+    (29) language -> LLANGUAGE string . RTAG
+
+    RTAG            shift and go to state 54
+
+
+state 32
+
+    (30) cast -> SCAST string . LCAST string MCAST role RCAST
+
+    LCAST           shift and go to state 55
+
+
+state 33
+
+    (34) story -> LSTORY temp_story . RTAG
+    (37) temp_story -> temp_story . stories
+    (38) stories -> . STRING string
+    (39) stories -> . SEP string
+
+    RTAG            shift and go to state 56
+    STRING          shift and go to state 58
+    SEP             shift and go to state 59
+
+    stories                        shift and go to state 57
+
+state 34
+
+    (35) temp_story -> string .
+
+    RTAG            reduce using rule 35 (temp_story -> string .)
+    STRING          reduce using rule 35 (temp_story -> string .)
+    SEP             reduce using rule 35 (temp_story -> string .)
+
+
+state 35
+
+    (36) temp_story -> STRING . stories
+    (44) string -> STRING .
+    (45) string -> STRING . wspaces string
+    (38) stories -> . STRING string
+    (39) stories -> . SEP string
+    (46) wspaces -> . WSPACE
+    (47) wspaces -> . WSPACE wspaces
+
+  ! shift/reduce conflict for STRING resolved as shift
+  ! shift/reduce conflict for SEP resolved as shift
+    RTAG            reduce using rule 44 (string -> STRING .)
+    STRING          shift and go to state 58
+    SEP             shift and go to state 59
+    WSPACE          shift and go to state 49
+
+  ! STRING          [ reduce using rule 44 (string -> STRING .) ]
+  ! SEP             [ reduce using rule 44 (string -> STRING .) ]
+
+    stories                        shift and go to state 60
+    wspaces                        shift and go to state 48
+
+state 36
+
+    (40) collection -> LCOLLECTION string . RTAG
+
+    RTAG            shift and go to state 61
+
+
+state 37
+
+    (41) runtime -> LRUNTIME time . RRUNTIME
+
+    RRUNTIME        shift and go to state 62
+
+
+state 38
+
+    (42) time -> STRING . string
+    (43) time -> STRING .
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    RRUNTIME        reduce using rule 43 (time -> STRING .)
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 63
+
+state 39
+
+    (16) similar_movie -> SLIKE u_may_like . ELIKE
+
+    ELIKE           shift and go to state 64
+
+
+state 40
+
+    (18) u_may_like -> single_like . SEP u_may_like
+    (19) u_may_like -> single_like .
+
+    SEP             shift and go to state 65
+    ELIKE           reduce using rule 19 (u_may_like -> single_like .)
+
+
+state 41
+
+    (17) single_like -> LLIKE . string MLIKE string RLIKE
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 66
+
+state 42
+
+    (12) watch -> SWATCH platforms . EWATCH
+
+    EWATCH          shift and go to state 67
+
+
+state 43
+
+    (14) platforms -> platform .
+    (15) platforms -> platform . platforms
+    (14) platforms -> . platform
+    (15) platforms -> . platform platforms
+    (13) platform -> . LWATCH string RWATCH
+
+    EWATCH          reduce using rule 14 (platforms -> platform .)
+    LWATCH          shift and go to state 44
+
+    platform                       shift and go to state 43
+    platforms                      shift and go to state 68
+
+state 44
+
+    (13) platform -> LWATCH . string RWATCH
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 69
+
+state 45
+
+    (20) mname -> LNAME movie_name RNAME .
+
+    $end            reduce using rule 20 (mname -> LNAME movie_name RNAME .)
+
+
+state 46
+
+    (21) movie_name -> string SEP . string
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 70
+
+state 47
+
+    (23) movie_name -> string STRING .
+
+    RNAME           reduce using rule 23 (movie_name -> string STRING .)
+
+
+state 48
+
+    (45) string -> STRING wspaces . string
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 71
+
+state 49
+
+    (46) wspaces -> WSPACE .
+    (47) wspaces -> WSPACE . wspaces
+    (46) wspaces -> . WSPACE
+    (47) wspaces -> . WSPACE wspaces
+
+    STRING          reduce using rule 46 (wspaces -> WSPACE .)
+    WSPACE          shift and go to state 49
+
+    wspaces                        shift and go to state 72
+
+state 50
+
+    (24) directors -> LDIRECTORS celebrity RTAG .
+
+    $end            reduce using rule 24 (directors -> LDIRECTORS celebrity RTAG .)
+
+
+state 51
+
+    (27) celebrity -> ANCHOR string . RA
+    (28) celebrity -> ANCHOR string . RA SEP celebrity
+
+    RA              shift and go to state 73
+
+
+state 52
+
+    (25) writer -> LWRITERS celebrity RTAG .
+
+    $end            reduce using rule 25 (writer -> LWRITERS celebrity RTAG .)
+
+
+state 53
+
+    (26) producers -> LPRODUCERS celebrity RTAG .
+
+    $end            reduce using rule 26 (producers -> LPRODUCERS celebrity RTAG .)
+
+
+state 54
+
+    (29) language -> LLANGUAGE string RTAG .
+
+    $end            reduce using rule 29 (language -> LLANGUAGE string RTAG .)
+
+
+state 55
+
+    (30) cast -> SCAST string LCAST . string MCAST role RCAST
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 74
+
+state 56
+
+    (34) story -> LSTORY temp_story RTAG .
+
+    $end            reduce using rule 34 (story -> LSTORY temp_story RTAG .)
+
+
+state 57
+
+    (37) temp_story -> temp_story stories .
+
+    RTAG            reduce using rule 37 (temp_story -> temp_story stories .)
+    STRING          reduce using rule 37 (temp_story -> temp_story stories .)
+    SEP             reduce using rule 37 (temp_story -> temp_story stories .)
+
+
+state 58
+
+    (38) stories -> STRING . string
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 75
+
+state 59
+
+    (39) stories -> SEP . string
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 76
+
+state 60
+
+    (36) temp_story -> STRING stories .
+
+    RTAG            reduce using rule 36 (temp_story -> STRING stories .)
+    STRING          reduce using rule 36 (temp_story -> STRING stories .)
+    SEP             reduce using rule 36 (temp_story -> STRING stories .)
+
+
+state 61
+
+    (40) collection -> LCOLLECTION string RTAG .
+
+    $end            reduce using rule 40 (collection -> LCOLLECTION string RTAG .)
+
+
+state 62
+
+    (41) runtime -> LRUNTIME time RRUNTIME .
+
+    $end            reduce using rule 41 (runtime -> LRUNTIME time RRUNTIME .)
+
+
+state 63
+
+    (42) time -> STRING string .
+
+    RRUNTIME        reduce using rule 42 (time -> STRING string .)
+
+
+state 64
+
+    (16) similar_movie -> SLIKE u_may_like ELIKE .
+
+    $end            reduce using rule 16 (similar_movie -> SLIKE u_may_like ELIKE .)
+
+
+state 65
+
+    (18) u_may_like -> single_like SEP . u_may_like
+    (18) u_may_like -> . single_like SEP u_may_like
+    (19) u_may_like -> . single_like
+    (17) single_like -> . LLIKE string MLIKE string RLIKE
+
+    LLIKE           shift and go to state 41
+
+    single_like                    shift and go to state 40
+    u_may_like                     shift and go to state 77
+
+state 66
+
+    (17) single_like -> LLIKE string . MLIKE string RLIKE
+
+    MLIKE           shift and go to state 78
+
+
+state 67
+
+    (12) watch -> SWATCH platforms EWATCH .
+
+    $end            reduce using rule 12 (watch -> SWATCH platforms EWATCH .)
+
+
+state 68
+
+    (15) platforms -> platform platforms .
+
+    EWATCH          reduce using rule 15 (platforms -> platform platforms .)
+
+
+state 69
+
+    (13) platform -> LWATCH string . RWATCH
+
+    RWATCH          shift and go to state 79
+
+
+state 70
+
+    (21) movie_name -> string SEP string .
+
+    RNAME           reduce using rule 21 (movie_name -> string SEP string .)
+
+
+state 71
+
+    (45) string -> STRING wspaces string .
+
+    SEP             reduce using rule 45 (string -> STRING wspaces string .)
+    STRING          reduce using rule 45 (string -> STRING wspaces string .)
+    RNAME           reduce using rule 45 (string -> STRING wspaces string .)
+    RTAG            reduce using rule 45 (string -> STRING wspaces string .)
+    LCAST           reduce using rule 45 (string -> STRING wspaces string .)
+    RA              reduce using rule 45 (string -> STRING wspaces string .)
+    RRUNTIME        reduce using rule 45 (string -> STRING wspaces string .)
+    MLIKE           reduce using rule 45 (string -> STRING wspaces string .)
+    RWATCH          reduce using rule 45 (string -> STRING wspaces string .)
+    MCAST           reduce using rule 45 (string -> STRING wspaces string .)
+    RLIKE           reduce using rule 45 (string -> STRING wspaces string .)
+    RCAST           reduce using rule 45 (string -> STRING wspaces string .)
+    BR              reduce using rule 45 (string -> STRING wspaces string .)
+
+
+state 72
+
+    (47) wspaces -> WSPACE wspaces .
+
+    STRING          reduce using rule 47 (wspaces -> WSPACE wspaces .)
+
+
+state 73
+
+    (27) celebrity -> ANCHOR string RA .
+    (28) celebrity -> ANCHOR string RA . SEP celebrity
+
+    RTAG            reduce using rule 27 (celebrity -> ANCHOR string RA .)
+    SEP             shift and go to state 80
+
+
+state 74
+
+    (30) cast -> SCAST string LCAST string . MCAST role RCAST
+
+    MCAST           shift and go to state 81
+
+
+state 75
+
+    (38) stories -> STRING string .
+
+    RTAG            reduce using rule 38 (stories -> STRING string .)
+    STRING          reduce using rule 38 (stories -> STRING string .)
+    SEP             reduce using rule 38 (stories -> STRING string .)
+
+
+state 76
+
+    (39) stories -> SEP string .
+
+    RTAG            reduce using rule 39 (stories -> SEP string .)
+    STRING          reduce using rule 39 (stories -> SEP string .)
+    SEP             reduce using rule 39 (stories -> SEP string .)
+
+
+state 77
+
+    (18) u_may_like -> single_like SEP u_may_like .
+
+    ELIKE           reduce using rule 18 (u_may_like -> single_like SEP u_may_like .)
+
+
+state 78
+
+    (17) single_like -> LLIKE string MLIKE . string RLIKE
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 82
+
+state 79
+
+    (13) platform -> LWATCH string RWATCH .
+
+    LWATCH          reduce using rule 13 (platform -> LWATCH string RWATCH .)
+    EWATCH          reduce using rule 13 (platform -> LWATCH string RWATCH .)
+
+
+state 80
+
+    (28) celebrity -> ANCHOR string RA SEP . celebrity
+    (27) celebrity -> . ANCHOR string RA
+    (28) celebrity -> . ANCHOR string RA SEP celebrity
+
+    ANCHOR          shift and go to state 28
+
+    celebrity                      shift and go to state 83
+
+state 81
+
+    (30) cast -> SCAST string LCAST string MCAST . role RCAST
+    (31) role -> . string
+    (32) role -> . role SEP string
+    (33) role -> . role BR string
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 84
+    role                           shift and go to state 85
+
+state 82
+
+    (17) single_like -> LLIKE string MLIKE string . RLIKE
+
+    RLIKE           shift and go to state 86
+
+
+state 83
+
+    (28) celebrity -> ANCHOR string RA SEP celebrity .
+
+    RTAG            reduce using rule 28 (celebrity -> ANCHOR string RA SEP celebrity .)
+
+
+state 84
+
+    (31) role -> string .
+
+    RCAST           reduce using rule 31 (role -> string .)
+    SEP             reduce using rule 31 (role -> string .)
+    BR              reduce using rule 31 (role -> string .)
+
+
+state 85
+
+    (30) cast -> SCAST string LCAST string MCAST role . RCAST
+    (32) role -> role . SEP string
+    (33) role -> role . BR string
+
+    RCAST           shift and go to state 87
+    SEP             shift and go to state 88
+    BR              shift and go to state 89
+
+
+state 86
+
+    (17) single_like -> LLIKE string MLIKE string RLIKE .
+
+    SEP             reduce using rule 17 (single_like -> LLIKE string MLIKE string RLIKE .)
+    ELIKE           reduce using rule 17 (single_like -> LLIKE string MLIKE string RLIKE .)
+
+
+state 87
+
+    (30) cast -> SCAST string LCAST string MCAST role RCAST .
+
+    $end            reduce using rule 30 (cast -> SCAST string LCAST string MCAST role RCAST .)
+
+
+state 88
+
+    (32) role -> role SEP . string
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 90
+
+state 89
+
+    (33) role -> role BR . string
+    (44) string -> . STRING
+    (45) string -> . STRING wspaces string
+
+    STRING          shift and go to state 26
+
+    string                         shift and go to state 91
+
+state 90
+
+    (32) role -> role SEP string .
+
+    RCAST           reduce using rule 32 (role -> role SEP string .)
+    SEP             reduce using rule 32 (role -> role SEP string .)
+    BR              reduce using rule 32 (role -> role SEP string .)
+
+
+state 91
+
+    (33) role -> role BR string .
+
+    RCAST           reduce using rule 33 (role -> role BR string .)
+    SEP             reduce using rule 33 (role -> role BR string .)
+    BR              reduce using rule 33 (role -> role BR string .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for STRING in state 35 resolved as shift
+WARNING: shift/reduce conflict for SEP in state 35 resolved as shift
